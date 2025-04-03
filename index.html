@@ -49,7 +49,12 @@
 
                 <div class="home__social">
                     <a href="https://www.linkedin.com/in/tanaychauli/" class="home__social-icon"><i class='bx bxl-linkedin'></i></a>
-                    <a href="https://leetcode.com/u/tanaychauli/" class="home__social-icon"><i class="fab fa-leetcode"></i></a>
+                    <a href="https://leetcode.com/u/tanaychauli/" class="home__social-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" fill="currentColor">
+                        <path d="M16.102 17.93l-2.697 2.607c-.466.467-1.111.662-1.823.662s-1.357-.195-1.824-.662l-4.332-4.363c-.467-.467-.702-1.15-.702-1.863s.235-1.357.702-1.824l4.319-4.38c.467-.467 1.125-.645 1.837-.645s1.357.195 1.823.662l2.697 2.606c.514.515 1.365.497 1.9-.038.535-.536.553-1.387.039-1.901l-2.609-2.636a5.055 5.055 0 0 0-3.85-1.759 4.9 4.9 0 0 0-3.788 1.787l-4.34 4.363c-.984.984-1.475 2.223-1.475 3.682 0 1.46.505 2.717 1.475 3.682l4.34 4.363c.98.98 2.243 1.487 3.788 1.487 1.502 0 2.798-.491 3.85-1.76l2.624-2.637c.514-.514.496-1.365-.039-1.9-.535-.535-1.387-.552-1.901-.039z"/>
+                    </svg>
+                </a>
+
                     <a href="https://github.com/tanaychaulinsec" class="home__social-icon"><i class='bx bxl-github' ></i></a>
                 </div>
 
@@ -93,9 +98,9 @@
                         <div class="skills__data">
                             <div class="skills__names">
                                 <i class='fab fa-java skills__icon'></i>
-                                <span class="skills__name">JAVA</span>
+                                <span class="skills__name">Java</span>
                             </div>
-                            <div class="skills__bar skills__html"></div>
+                            <div class="skills__bar skills__java"></div>
                             <div>
                                 <span class="skills__percentage">95%</span>
                             </div>
@@ -103,9 +108,9 @@
                         <div class="skills__data">
                             <div class="skills__names">
                                 <i class='bx bxs-data skills__icon'></i>
-                                <span class="skills__name">SQL</span>
+                                <span class="skills__name">SQL/NoSQL</span>
                             </div>
-                            <div class="skills__bar skills__css"></div>
+                            <div class="skills__bar skills__sql"></div>
                             <div>
                                 <span class="skills__percentage">85%</span>
                             </div>
@@ -115,9 +120,9 @@
                                 <i class='bx bx-cog skills__icon'></i>
                                 <span class="skills__name">System Design</span>
                             </div>
-                            <div class="skills__bar skills__ux"></div>
+                            <div class="skills__bar skills__system_design"></div>
                             <div>
-                                <span class="skills__percentage">85%</span>
+                                <span class="skills__percentage">65%</span>
                             </div>
                         </div>
                         <div class="skills__data">
@@ -125,9 +130,9 @@
                                 <i class='bx bx-network-chart skills__icon'></i>
                                 <span class="skills__name">Microservice</span>
                             </div>
-                            <div class="skills__bar skills__js"></div>
+                            <div class="skills__bar skills__microservice"></div>
                             <div>
-                                <span class="skills__percentage">65%</span>
+                                <span class="skills__percentage">75%</span>
                             </div>
                         </div>
                     </div>
@@ -164,17 +169,16 @@
                 </div>
             </section>
 
-            <!--===== CONTACT =====-->
+<!--            &lt;!&ndash;===== CONTACT =====&ndash;&gt;-->
             <section class="contact section" id="contact">
-                <h2 class="section-title">Contact</h2>
-
                 <div class="contact__container bd-grid">
-                    <!-- Updated HTML -->
-                    <form id="contactForm" class="contact__form">
-                        <input type="text" id="name" placeholder="Name" class="contact__input">
-                        <input type="email" id="email" placeholder="Email" class="contact__input">
-                        <textarea id="message" cols="0" rows="10" class="contact__input"></textarea>
-                        <input type="button" id="requestButton" value="Request" class="contact__button button">
+                    <h4>Contact Us</h4>
+                    <form method="post" id="contactForm" action="" name="contact-form" class="contact__form">
+                        <input type="text" id="name" name="Name" placeholder=" Name" class="contact__input">
+                        <input type="number" id="number" name="Contacts_Number" placeholder=" Number (+91 9876543210)" class="contact__input">
+                        <input type="email" id="email" name="Email" placeholder=" Email" class="contact__input">
+                        <textarea id="message" cols="0" rows="10" name="Message" placeholder=" Drop your message here .." class="contact__input"></textarea>
+                        <input type="submit" value="Submit" id="submit"  class="contact__button button">
                     </form>
                 </div>
             </section>
@@ -202,27 +206,5 @@
         <!--===== MAIN JS =====-->
         <script src="assets/js/main.js"></script>
 
-        <script>
-            document.getElementById('requestButton').addEventListener('click', function() {
-         const name = document.getElementById('name').value;
-         const email = document.getElementById('email').value;
-         const message = document.getElementById('message').value;
-
-         fetch('https://script.google.com/macros/s/AKfycbymtk2m8RFc8bwG8aveLl1sP6HQOP0479FWdtwyKtWwSBmmEdnua2Jz5b2dXDQHeXme/exec', {
-             method: 'POST',
-             body: JSON.stringify({ name: name, email: email, message: message }),
-             headers: {
-                 'Content-Type': 'application/json'
-             }
-         })
-         .then(response => response.json())
-         .then(data => {
-             console.log('Success:', data);
-         })
-         .catch((error) => {
-             console.error('Error:', error);
-         });
-     });
-        </script>
     </body>
 </html>

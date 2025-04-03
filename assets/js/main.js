@@ -54,4 +54,17 @@ const sr = ScrollReveal({
 sr.reveal('.home__data, .about__img, .skills__subtitle, .skills__text',{}); 
 sr.reveal('.home__img, .about__subtitle, .about__text, .skills__img',{delay: 400}); 
 sr.reveal('.home__social-icon',{ interval: 200}); 
-sr.reveal('.skills__data, .work__img, .contact__input',{interval: 200}); 
+sr.reveal('.skills__data, .work__img, .contact__input',{interval: 200});
+
+/*===== SAVE GOOGLE SHEET JS =====*/
+const scriptURL = 'https://script.google.com/macros/s/AKfycbz-De_UTI1KmEuh_avT49BdGkB89Lu9CdvzTV3nhePVVLbT35YAveUGLGw4WxmqilIJ/exec'
+
+const form = document.forms['contact-form']
+
+form.addEventListener('submit', e => {
+  e.preventDefault()
+  fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+  .then(response => alert("Thank you! your form is submitted successfully." ))
+  .then(() => { window.location.reload(); })
+  .catch(error => console.error('Error!', error.message))
+})
